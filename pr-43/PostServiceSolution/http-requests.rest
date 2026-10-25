@@ -1,0 +1,21 @@
+@host = http://localhost:5211
+GET {{host}}/postings
+### Створення
+POST {{host}}/postings
+Content-Type: application/json
+
+{"from":"Іван Коваль","to":"Олена Мельник","content":"Книги","deliveryType":"Standard","weight":2,"width":20,"height":10,"depth":30,"value":500}
+### Читання одного запису
+GET {{host}}/postings/1
+### Редагування
+PUT {{host}}/postings/1
+Content-Type: application/json
+
+{"from":"Іван Коваль","to":"Олена Мельник","content":"Книги й зошити","deliveryType":"Express","weight":3,"width":20,"height":10,"depth":30,"value":600}
+### Видалення
+DELETE {{host}}/postings/1
+### Перевірка валідації
+POST {{host}}/postings
+Content-Type: application/json
+
+{"from":"","to":"Олена","content":"Книги","weight":0}

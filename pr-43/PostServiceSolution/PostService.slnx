@@ -1,0 +1,6 @@
+<Solution>
+<Folder Name="/01-Models/"><Project Path="PostService.Models/PostService.Models.csproj" /></Folder>
+<Folder Name="/02-Business/"><Project Path="PostService.DataAccess/PostService.DataAccess.csproj" /><Project Path="PostService.Business/PostService.Business.csproj" /></Folder>
+<Folder Name="/03-Application Server/"><Project Path="PostService.Dtos/PostService.Dtos.csproj" /><Project Path="PostService/PostService.csproj" /></Folder>
+<Folder Name="/04-Application Client/"></Folder>
+</Solution>
