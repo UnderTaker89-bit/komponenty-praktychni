@@ -1,0 +1,77 @@
+[
+  {
+    "name": "API create + tariff",
+    "status": "PASS",
+    "detail": "201; price=65"
+  },
+  {
+    "name": "API read",
+    "status": "PASS",
+    "detail": "200 and saved content"
+  },
+  {
+    "name": "API update",
+    "status": "PASS",
+    "detail": "204; recalculated price 111"
+  },
+  {
+    "name": "API invalid fields",
+    "status": "PASS",
+    "detail": "Five invalid payloads return 400"
+  },
+  {
+    "name": "API malformed JSON",
+    "status": "PASS",
+    "detail": "400"
+  },
+  {
+    "name": "SQLite persistence",
+    "status": "PASS",
+    "detail": "Data survives server restart"
+  },
+  {
+    "name": "API delete + missing record",
+    "status": "PASS",
+    "detail": "204 then 404"
+  },
+  {
+    "name": "Web form validation",
+    "status": "PASS",
+    "detail": "Empty sender marked inline"
+  },
+  {
+    "name": "Web create and edit",
+    "status": "PASS",
+    "detail": "Persisted row refreshed"
+  },
+  {
+    "name": "Web details and navigation",
+    "status": "PASS",
+    "detail": "Read only details contain saved data"
+  },
+  {
+    "name": "Web responsive layout",
+    "status": "PASS",
+    "detail": "430px cards visible"
+  },
+  {
+    "name": "Web cancel and confirm delete",
+    "status": "PASS",
+    "detail": "Cancel preserves; confirm removes"
+  },
+  {
+    "name": "Web JavaScript runtime",
+    "status": "PASS",
+    "detail": "No uncaught page errors"
+  },
+  {
+    "name": "Web server unavailable",
+    "status": "PASS",
+    "detail": "503 shown without false success"
+  },
+  {
+    "name": "Teacher registration page",
+    "status": "PASS",
+    "detail": "Ten scenarios reproduced and recorded; defects confirmed"
+  }
+]

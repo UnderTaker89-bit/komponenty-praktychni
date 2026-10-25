@@ -1,0 +1,41 @@
+[
+  {
+    "work": "42",
+    "status": "PASS",
+    "checks": [
+      "create",
+      "read",
+      "update",
+      "validation",
+      "persistence after restart",
+      "delete",
+      "404 after deletion"
+    ]
+  },
+  {
+    "work": "43",
+    "status": "PASS",
+    "checks": [
+      "create",
+      "read",
+      "update",
+      "validation",
+      "persistence after restart",
+      "delete",
+      "404 after deletion"
+    ]
+  },
+  {
+    "work": "13",
+    "status": "PASS",
+    "checks": [
+      "valid schema and seed",
+      "no overlap on insert",
+      "adjacent intervals permitted",
+      "no overlap on update",
+      "nonnegative rate",
+      "discount 0..100",
+      "foreign keys"
+    ]
+  }
+]
