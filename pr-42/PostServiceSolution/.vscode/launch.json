@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "PostService сервер",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/PostService/bin/Debug/net10.0/PostService.dll",
+      "cwd": "${workspaceFolder}/PostService",
+      "env": {
+        "ASPNETCORE_URLS": "http://localhost:5211"
+      },
+      "console": "internalConsole"
+    },
+    {
+      "name": "Windows Forms клієнт",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/PostService.App/bin/Debug/net10.0-windows/PostService.App.dll",
+      "cwd": "${workspaceFolder}/PostService.App",
+      "console": "internalConsole"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Сервер і клієнт",
+      "configurations": [
+        "PostService сервер",
+        "Windows Forms клієнт"
+      ],
+      "stopAll": true
+    }
+  ]
+}
