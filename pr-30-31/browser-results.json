@@ -1,0 +1,146 @@
+{
+  "browser": "156.0.8078.48",
+  "method": "Browser form interaction through Playwright; external navigation intercepted",
+  "tests": [
+    {
+      "name": "valid",
+      "values": {
+        "name": "Іван Коваль",
+        "login": "user14",
+        "email": "ivan@example.com",
+        "password": "Abcd1!",
+        "confirmPassword": "Abcd1!"
+      },
+      "navigation": [
+        "https://page-not-found.html/"
+      ],
+      "posts": [],
+      "messages": ""
+    },
+    {
+      "name": "short-login-1",
+      "values": {
+        "name": "Іван Коваль",
+        "login": "a",
+        "email": "ivan@example.com",
+        "password": "Abcd1!",
+        "confirmPassword": "Abcd1!"
+      },
+      "navigation": [
+        "https://page-not-found.html/"
+      ],
+      "posts": [],
+      "messages": ""
+    },
+    {
+      "name": "short-login-3",
+      "values": {
+        "name": "Іван Коваль",
+        "login": "abc",
+        "email": "ivan@example.com",
+        "password": "Abcd1!",
+        "confirmPassword": "Abcd1!"
+      },
+      "navigation": [
+        "https://page-not-found.html/"
+      ],
+      "posts": [],
+      "messages": ""
+    },
+    {
+      "name": "password-mismatch",
+      "values": {
+        "name": "Іван Коваль",
+        "login": "user14",
+        "email": "ivan@example.com",
+        "password": "Abcd1!",
+        "confirmPassword": "Wrong9!"
+      },
+      "navigation": [
+        "https://page-not-found.html/"
+      ],
+      "posts": [],
+      "messages": ""
+    },
+    {
+      "name": "forbidden-name",
+      "values": {
+        "name": "Ёж",
+        "login": "user14",
+        "email": "ivan@example.com",
+        "password": "Abcd1!",
+        "confirmPassword": "Abcd1!"
+      },
+      "navigation": [
+        "https://page-not-found.html/"
+      ],
+      "posts": [],
+      "messages": ""
+    },
+    {
+      "name": "ukrainian-password",
+      "values": {
+        "name": "Іван Коваль",
+        "login": "user14",
+        "email": "ivan@example.com",
+        "password": "Абв1!2",
+        "confirmPassword": "Абв1!2"
+      },
+      "navigation": [],
+      "posts": [],
+      "messages": "Пароль має містити щонайменше 6 символів, серед яких літери, цифри і спеціальні знаки."
+    },
+    {
+      "name": "name-with-digit",
+      "values": {
+        "name": "Іван2",
+        "login": "user14",
+        "email": "ivan@example.com",
+        "password": "Abcd1!",
+        "confirmPassword": "Abcd1!"
+      },
+      "navigation": [],
+      "posts": [],
+      "messages": "Ім'я має містити тільки літери та пробіли і не більше 128 символів."
+    },
+    {
+      "name": "login-25",
+      "values": {
+        "name": "Іван Коваль",
+        "login": "aaaaaaaaaaaaaaaaaaaaaaaaa",
+        "email": "ivan@example.com",
+        "password": "Abcd1!",
+        "confirmPassword": "Abcd1!"
+      },
+      "navigation": [],
+      "posts": [],
+      "messages": "Логін має бути одним словом, містити лише латинські літери, цифри, крапки або тире та не перевищувати 24 символи."
+    },
+    {
+      "name": "name-129",
+      "values": {
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "login": "user14",
+        "email": "ivan@example.com",
+        "password": "Abcd1!",
+        "confirmPassword": "Abcd1!"
+      },
+      "navigation": [],
+      "posts": [],
+      "messages": "Ім'я має містити тільки літери та пробіли і не більше 128 символів."
+    },
+    {
+      "name": "password-no-digit",
+      "values": {
+        "name": "Іван Коваль",
+        "login": "user14",
+        "email": "ivan@example.com",
+        "password": "Abcdef!",
+        "confirmPassword": "Abcdef!"
+      },
+      "navigation": [],
+      "posts": [],
+      "messages": "Пароль має містити щонайменше 6 символів, серед яких літери, цифри і спеціальні знаки."
+    }
+  ]
+}
