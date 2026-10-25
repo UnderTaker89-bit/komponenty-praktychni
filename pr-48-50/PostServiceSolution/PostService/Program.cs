@@ -1,0 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using PostService.Business;
+using PostService.DataAccess;
+using PostService.Dtos;
+var builder=WebApplication.CreateBuilder(args);
+builder.Logging.ClearProviders();builder.Logging.AddConsole();
+builder.Services.AddDbContext<PostingDbContext>(o=>o.UseSqlite(builder.Configuration.GetConnectionString("Postings")??"Data Source=postings-ef.db"));
+builder.Services.AddScoped<IPostingRepository,PostingRepository>();
+builder.Services.AddScoped<PostingService>();
+var app=builder.Build();
+app.MapGet("/postings",(PostingService s)=>Results.Ok(s.GetList()));
+app.MapGet("/postings/{id:int}",(int id,PostingService s)=>s.GetById(id) is {} p?Results.Ok(p):Results.NotFound());
+app.MapPost("/postings",(PostingWriteDto d,PostingService s)=>{var errors=PostingRules.Validate(d);if(errors.Count>0)return Results.ValidationProblem(errors);var p=s.Create(d);return Results.Created($"/postings/{p.Id}",p);});
+app.MapPut("/postings/{id:int}",(int id,PostingWriteDto d,PostingService s)=>{var errors=PostingRules.Validate(d);if(errors.Count>0)return Results.ValidationProblem(errors);return s.Update(id,d)?Results.NoContent():Results.NotFound();});
+app.MapDelete("/postings/{id:int}",(int id,PostingService s)=>s.Delete(id)?Results.NoContent():Results.NotFound());
+using(var scope=app.Services.CreateScope()) scope.ServiceProvider.GetRequiredService<PostingDbContext>().Database.EnsureCreated();
+app.Run();

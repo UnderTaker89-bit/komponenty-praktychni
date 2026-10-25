@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "PostService.Web": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5222"
+    }
+  }
+}
