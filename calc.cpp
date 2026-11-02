@@ -12,7 +12,7 @@ int main() {
     if (!(std::cin >> b)) return 1;
     switch (op) {
         case 1:
-            std::cerr << "Operation is not implemented\n"; return 1;
+            result = a + b;
             break;
         case 2:
             std::cerr << "Operation is not implemented\n"; return 1;
