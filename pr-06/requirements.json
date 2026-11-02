@@ -1,0 +1,68 @@
+[
+  {
+    "id": "FR01",
+    "typeAndPriority": "Функціональна Must",
+    "requirement": "Створювати порожній документ",
+    "acceptanceCriterion": "Новий документ має порожній вміст та не має шляху"
+  },
+  {
+    "id": "FR02",
+    "typeAndPriority": "Функціональна Must",
+    "requirement": "Відкривати текстовий файл",
+    "acceptanceCriterion": "Відкритий вміст збігається з файлом для UTF8 і UTF16"
+  },
+  {
+    "id": "FR03",
+    "typeAndPriority": "Функціональна Must",
+    "requirement": "Вставляти, видаляти та змінювати текст",
+    "acceptanceCriterion": "Зміна відображається в документі й позначає його незбереженим"
+  },
+  {
+    "id": "FR04",
+    "typeAndPriority": "Функціональна Must",
+    "requirement": "Зберігати в поточний файл або новий шлях",
+    "acceptanceCriterion": "Повторне відкриття дає той самий текст"
+  },
+  {
+    "id": "FR05",
+    "typeAndPriority": "Функціональна Should",
+    "requirement": "Шукати й замінювати фрагменти",
+    "acceptanceCriterion": "Замінюються тільки збіги згідно з вибором користувача"
+  },
+  {
+    "id": "FR06",
+    "typeAndPriority": "Функціональна Must",
+    "requirement": "Попереджати про незбережені зміни перед закриттям",
+    "acceptanceCriterion": "Зберегти, відхилити та скасувати дають різні коректні результати"
+  },
+  {
+    "id": "FR07",
+    "typeAndPriority": "Функціональна Should",
+    "requirement": "Скасовувати й повторювати редагування",
+    "acceptanceCriterion": "Undo відновлює попередній стан, Redo повертає зміну"
+  },
+  {
+    "id": "NFR01",
+    "typeAndPriority": "Швидкодія Must",
+    "requirement": "Відкривати локальний файл 1 МБ за ≤1 с",
+    "acceptanceCriterion": "На еталонному ПК Windows 10, SSD, 8 ГБ RAM, медіана 10 запусків ≤1 с"
+  },
+  {
+    "id": "NFR02",
+    "typeAndPriority": "Сумісність Must",
+    "requirement": "Коректно зберігати українські символи в UTF8 та UTF16",
+    "acceptanceCriterion": "Текст «Їжак Ґанок Єдність» зберігається без втрат"
+  },
+  {
+    "id": "NFR03",
+    "typeAndPriority": "Надійність Must",
+    "requirement": "Не втрачати попередній файл при невдалому збереженні",
+    "acceptanceCriterion": "Недостатньо місця: старий файл цілий, буфер лишається відкритим"
+  },
+  {
+    "id": "NFR04",
+    "typeAndPriority": "Зручність Should",
+    "requirement": "Основні операції доступні клавіатурою",
+    "acceptanceCriterion": "Ctrl+N, Ctrl+O, Ctrl+S і Ctrl+Z працюють без миші"
+  }
+]
