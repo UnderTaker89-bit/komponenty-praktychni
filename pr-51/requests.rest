@@ -1,0 +1,28 @@
+@base = http://localhost:5211
+@id = 1
+
+GET {{base}}/postings
+
+###
+GET {{base}}/postings/2147483647
+
+###
+POST {{base}}/postings
+Content-Type: application/json
+
+{"from":"Київ","to":"Львів","content":"Книги","deliveryType":"Standard","weight":2,"width":20,"height":10,"depth":30,"value":500}
+
+###
+PUT {{base}}/postings/{{id}}
+Content-Type: application/json
+
+{"from":"Київ","to":"Одеса","content":"Книги","deliveryType":"Express","weight":3,"width":20,"height":10,"depth":30,"value":600}
+
+###
+DELETE {{base}}/postings/{{id}}
+
+###
+POST {{base}}/postings
+Content-Type: application/json
+
+{"from":"","to":"","content":"","deliveryType":"Invalid","weight":-1,"width":-1,"height":-1,"depth":-1,"value":-1}
