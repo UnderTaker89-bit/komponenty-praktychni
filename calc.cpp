@@ -18,7 +18,7 @@ int main() {
             result = a - b;
             break;
         case 3:
-            std::cerr << "Operation is not implemented\n"; return 1;
+            result = a * b;
             break;
         case 4:
             std::cerr << "Operation is not implemented\n"; return 1;
