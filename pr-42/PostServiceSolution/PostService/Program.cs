@@ -2,6 +2,7 @@ using PostService.Business;
 using PostService.DataAccess;
 using PostService.Dtos;
 var builder=WebApplication.CreateBuilder(args);
+if (string.IsNullOrWhiteSpace(builder.Configuration["urls"])) builder.WebHost.UseUrls("http://localhost:5211");
 builder.Logging.ClearProviders();builder.Logging.AddConsole();
 builder.Services.AddScoped<IPostingRepository>(_=>new PostingRepository(builder.Configuration.GetConnectionString("Postings")??"Data Source=postings-ado.db"));
 builder.Services.AddScoped<PostingService>();

@@ -3,6 +3,7 @@ using PostService.Business;
 using PostService.DataAccess;
 using PostService.Dtos;
 var builder=WebApplication.CreateBuilder(args);
+if (string.IsNullOrWhiteSpace(builder.Configuration["urls"])) builder.WebHost.UseUrls("http://localhost:5211");
 builder.Logging.ClearProviders();builder.Logging.AddConsole();
 builder.Services.AddDbContext<PostingDbContext>(o=>o.UseSqlite(builder.Configuration.GetConnectionString("Postings")??"Data Source=postings-ef.db"));
 builder.Services.AddScoped<IPostingRepository,PostingRepository>();

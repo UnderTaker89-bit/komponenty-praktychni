@@ -1,0 +1,50 @@
+{
+  "baseline": {
+    "name": "Іван Коваль",
+    "login": "user14",
+    "email": "ivan@example.com",
+    "password": "Abcd1!",
+    "confirmPassword": "Abcd1!"
+  },
+  "cases": [
+    {
+      "id": "BUG01",
+      "override": {
+        "login": "a"
+      }
+    },
+    {
+      "id": "BUG01",
+      "override": {
+        "login": "abc"
+      }
+    },
+    {
+      "id": "BUG02",
+      "override": {
+        "confirmPassword": "Wrong9!"
+      }
+    },
+    {
+      "id": "BUG03",
+      "override": {
+        "name": "Ёж"
+      }
+    },
+    {
+      "id": "BUG04",
+      "override": {
+        "password": "Абв1!2",
+        "confirmPassword": "Абв1!2"
+      }
+    },
+    {
+      "id": "BUG05",
+      "override": {}
+    },
+    {
+      "id": "BUG06",
+      "override": {}
+    }
+  ]
+}
