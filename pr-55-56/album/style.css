@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #101724; color: #e9eff9; font-family: Arial, sans-serif; }
+header, main, footer { max-width: 1120px; margin: auto; padding: 30px 24px; }
+header { padding-top: 54px; }
+.eyebrow { color: #7db8fb; letter-spacing: .18em; font-size: 12px; }
+h1 { font-size: clamp(30px, 5vw, 48px); margin: 14px 0; }
+header > p:last-child, footer { color: #aebbd1; line-height: 1.6; }
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+figure { margin: 0; background: #1c283b; border: 1px solid #30415a; border-radius: 14px; overflow: hidden; }
+figure a { display: block; background: #05080d; }
+img { width: 100%; height: 215px; object-fit: contain; display: block; transition: transform .2s; }
+figure a:hover img { transform: scale(1.04); }
+figure a:focus-visible { outline: 3px solid #7db8fb; outline-offset: -3px; }
+figcaption { min-height: 78px; padding: 17px; font-size: 15px; line-height: 1.45; }
+footer { font-size: 13px; padding-bottom: 40px; }
+footer a { color: #9dcbff; }
+@media (max-width: 800px) { .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 500px) { .gallery { grid-template-columns: 1fr; } header, main, footer { padding-left: 16px; padding-right: 16px; } }
+@media (prefers-reduced-motion: reduce) { img { transition: none; } }
