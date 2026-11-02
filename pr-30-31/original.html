@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація користувача</title>
+    <style>
+        body {font-family: Arial, sans-serif; padding: 20px;}
+        form {max-width: 400px; margin: auto;}
+        label {display: block; margin-top: 15px;}
+        input[type="text"], input[type="email"], input[type="password"] {width: 100%; padding: 8px; box-sizing: border-box;}
+        .error {color: red; font-size: 0.9em;}
+    </style>
+</head>
+<body>
+    <h2>Форма реєстрації</h2>
+    <form id="registrationForm">
+        <label>Ім'я:<input type="text" id="name" required></label>
+        <label>Логін:<input type="text" id="login" required></label>
+        <label>Електронна адреса:<input type="email" id="email" required></label>
+        <label>Пароль:<input type="password" id="password" required></label>
+        <label>Підтвердження пароля:<input type="password" id="confirmPassword" required></label>
+        <button type="submit">Зареєструватися</button>
+        <div id="errors" class="error"></div>
+    </form>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let errors = [];
+            const name = document.getElementById('name').value.trim();
+            const login = document.getElementById('login').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (!/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]{1,128}$/.test(name)) {
+                errors.push("Ім'я має містити тільки літери та пробіли і не більше 128 символів.");
+            }
+            if (!/^[a-zA-Z0-9.-]{1,24}$/.test(login)) {
+                errors.push("Логін має бути одним словом, містити лише латинські літери, цифри, крапки або тире та не перевищувати 24 символи.");
+            }
+            if (email.length > 128 || !/^\S+@\S+\.\S+$/.test(email)) {
+                errors.push("Електронна адреса повинна бути валідною і не перевищувати 128 символів.");
+            }
+            if (password.length < 6 || !/[a-zA-Z]/.test(password) || !/\d/.test(password) || !/[^a-zA-Z0-9]/.test(password)) {
+                errors.push("Пароль має містити щонайменше 6 символів, серед яких літери, цифри і спеціальні знаки.");
+            }
+            const errorDiv = document.getElementById('errors');
+            if (errors.length > 0) {
+                errorDiv.innerHTML = errors.join('<br>');
+            } else {
+                window.location.href = 'https://page-not-found.html';
+            }
+        });
+    </script>
+</body>
+</html>
