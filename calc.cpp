@@ -21,7 +21,8 @@ int main() {
             std::cerr << "Operation is not implemented\n"; return 1;
             break;
         case 4:
-            std::cerr << "Operation is not implemented\n"; return 1;
+            if (b == 0) { std::cerr << "Division by zero\n"; return 1; }
+            result = a / b;
             break;
         default:
             std::cerr << "Unknown operation\n";
