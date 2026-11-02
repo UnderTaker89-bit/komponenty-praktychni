@@ -15,7 +15,7 @@ int main() {
             std::cerr << "Operation is not implemented\n"; return 1;
             break;
         case 2:
-            std::cerr << "Operation is not implemented\n"; return 1;
+            result = a - b;
             break;
         case 3:
             std::cerr << "Operation is not implemented\n"; return 1;
